@@ -37,10 +37,13 @@ public class ConfigBehaviour : MonoBehaviour
 {
     public static ConfigBehaviour Singleton { get; private set; }
 
+    [SerializeField] private TMP_Dropdown _daltonismDD;
     [SerializeField] private TMP_Dropdown _languageDD;
 
     private event OnNotifyDaltonismChangesHandler OnDaltonismChangesEvent;
     private event OnNotifyLanguageChangesHandler OnLanguageChangesEvent;
+
+    private event Action OnUpdate;
 
     public ConfigOptions Options { get; private set; }
 
@@ -75,10 +78,7 @@ public class ConfigBehaviour : MonoBehaviour
 
         }
         else
-        {
-            Singleton = null;
             Destroy(this);
-        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -104,13 +104,30 @@ public class ConfigBehaviour : MonoBehaviour
     public void AddOnNotifyLanguageChnagesEvent(OnNotifyLanguageChangesHandler handler) => OnLanguageChangesEvent += handler;
     public void RemoveOnNotifyLnaguageChangesEvent(OnNotifyLanguageChangesHandler handler) => OnLanguageChangesEvent -= handler;
 
-    public void NotifyDaltonismChanges(int type)
+    public void OnDaltonismValueChanged(int _)
     {
-        Options.DaltonismType = (DaltonismType)type;
-        OnDaltonismChangesEvent?.Invoke((DaltonismType)type);
+        OnUpdate += NotifyDaltonismChanges;
     }
 
-    public void NotifyLanguageChanges(int option)
+    private void NotifyDaltonismChanges()
+    {
+        var type = (DaltonismType)_daltonismDD.value;
+        Options.DaltonismType = type;
+        OnDaltonismChangesEvent?.Invoke(type);
+    }
+
+    public void OnLanguageValueChanged(int _)
+    {
+        OnUpdate += NotifyLanguageChanges;
+    }
+
+    private void NotifyLanguageChanges()
+    {
+        var option = _languageDD.value;
+        OnDisclaimerLanguageValueChanged(option);
+    }
+
+    public void OnDisclaimerLanguageValueChanged(int option)
     {
         var language = _languageDD.options[option].text.ToLower()[..2];
         Options.Language = language;
@@ -119,7 +136,7 @@ public class ConfigBehaviour : MonoBehaviour
 
     private void UpdateOptions()
     {
-
+        OnUpdate?.Invoke();
     }
 
     private void OnDestroy()

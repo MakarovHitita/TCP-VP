@@ -41,10 +41,7 @@ public class SpriteManager : MonoBehaviour
             }
         }
         else
-        {
-            Singleton = null;
             Destroy(this);
-        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,5 +54,10 @@ public class SpriteManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void OnDestroy()
+    {
+        Singleton = null;
     }
 }

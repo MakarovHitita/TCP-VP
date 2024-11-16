@@ -7,6 +7,7 @@ public class LanguageManager : MonoBehaviour
     public static LanguageManager Singleton { get; private set; }
     [SerializeField] private List<TextAsset> _texts;
 
+    public List<string> Languages { get; private set; }
     public Dictionary<string, Dictionary<string, string>> LanguageTexts { get; private set; }
 
     private void Awake()
@@ -15,22 +16,21 @@ public class LanguageManager : MonoBehaviour
         {
             Singleton = this;
             LanguageTexts = new();
+            Languages = new();
             for (int i = 0; i < _texts.Count; i++)
             {
                 LanguageTexts.Add(_texts[i].name, new());
                 var languageText = _texts[i].text.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
-                for (int j = 0; j < languageText.Length; j++)
+                Languages.Add(languageText[0]);
+                for (int j = 1; j < languageText.Length; j++)
                 {
                     var languageTextEntries = languageText[j].Split(":\t");
                     LanguageTexts[_texts[i].name].Add(languageTextEntries[0], languageTextEntries[^1]);
                 }
             }
         }
-        else
-        {
-            Singleton = null;
-            Destroy(this);
-        }
+        else        
+            Destroy(this);        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,5 +43,10 @@ public class LanguageManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void OnDestroy()
+    {
+        Singleton = null;
     }
 }
