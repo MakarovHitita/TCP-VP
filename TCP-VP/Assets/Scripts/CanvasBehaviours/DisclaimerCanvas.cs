@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -47,12 +48,20 @@ public class DisclaimerCanvas : MonoBehaviour
     {
         _languageSelection.SetActive(false);
         ConfigBehaviour.Singleton.UpdateOptions();
-        var rutine = StartCoroutine("ShowDisclaimer");
+        var rutine = StartCoroutine(nameof(ShowDisclaimer));
     }
 
-    //private IEnumerator ShowDisclaimer()
-    //{
-    //    var disclaimer = Disclaimers
-    //    for (int i = 0, i < )
-    //}
+    private IEnumerator ShowDisclaimer()
+    {
+        var disclaimer = Disclaimers[ConfigBehaviour.Singleton.Options.Language];
+        for (int i = 0; i < disclaimer.Length; i++)
+        {
+            float speed = _disclaimerSpeed;
+            if (disclaimer[i].ToString() == Environment.NewLine)
+                speed *= 10;
+            _languageSelectionConsole.text += disclaimer[i];
+            yield return new WaitForSecondsRealtime(speed);
+        }
+        yield return new WaitForSecondsRealtime(_disclaimerSpeed * 100);
+    }
 }
