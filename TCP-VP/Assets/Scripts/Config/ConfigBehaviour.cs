@@ -44,6 +44,7 @@ public class ConfigBehaviour : MonoBehaviour
     private event OnNotifyLanguageChangesHandler OnLanguageChangesEvent;
 
     private event Action OnUpdate;
+    private event Action OnRevert;
 
     public ConfigOptions Options { get; private set; }
 
@@ -117,7 +118,7 @@ public class ConfigBehaviour : MonoBehaviour
     }
 
     public void OnLanguageValueChanged(int _)
-    {
+    {        
         OnUpdate += NotifyLanguageChanges;
     }
 
