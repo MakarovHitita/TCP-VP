@@ -30,4 +30,9 @@ public class LanguageInObjectSelector : MonoBehaviour
     {
         Text.text = LanguageManager.Singleton.LanguageTexts[language][Name];
     }
+
+    private void OnDestroy()
+    {
+        ConfigBehaviour.Singleton.RemoveOnNotifyLanguageChangesEvent(ChangeLanguageText);
+    }
 }

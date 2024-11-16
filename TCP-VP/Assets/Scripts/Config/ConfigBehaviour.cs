@@ -38,6 +38,8 @@ public class ConfigBehaviour : MonoBehaviour
 {
     public static ConfigBehaviour Singleton { get; private set; }
 
+    [SerializeField] private TMP_Dropdown _languageSelectionDD;
+   
     [SerializeField] private TMP_Dropdown _daltonismDD;
     [SerializeField] private TMP_Dropdown _languageDD;
 
@@ -45,7 +47,6 @@ public class ConfigBehaviour : MonoBehaviour
     private event OnNotifyLanguageChangesHandler OnLanguageChangesEvent;
 
     private event Action OnUpdate;
-    private event Action OnRevert;
 
     public ConfigOptions Options { get; private set; }
 
@@ -104,7 +105,7 @@ public class ConfigBehaviour : MonoBehaviour
     public void AddOnNotifyDaltonismChangesEvent(OnNotifyDaltonismChangesHandler handler) => OnDaltonismChangesEvent += handler;
     public void RemoveOnNotifyDaltonismChangesEvent(OnNotifyDaltonismChangesHandler handler) => OnDaltonismChangesEvent -= handler;
     public void AddOnNotifyLanguageChnagesEvent(OnNotifyLanguageChangesHandler handler) => OnLanguageChangesEvent += handler;
-    public void RemoveOnNotifyLnaguageChangesEvent(OnNotifyLanguageChangesHandler handler) => OnLanguageChangesEvent -= handler;
+    public void RemoveOnNotifyLanguageChangesEvent(OnNotifyLanguageChangesHandler handler) => OnLanguageChangesEvent -= handler;
 
     public void OnDaltonismValueChanged(int _)
     {
@@ -126,11 +127,19 @@ public class ConfigBehaviour : MonoBehaviour
     private void NotifyLanguageChanges()
     {
         var option = _languageDD.value;
-        OnDisclaimerLanguageValueChanged(option);
+        var language = _languageDD.options[option].text.ToLower()[..2];
+        Options.Language = language;
+        OnLanguageChangesEvent?.Invoke(language);
     }
 
-    public void OnDisclaimerLanguageValueChanged(int option)
+    public void OnDisclaimerLanguageValueChanged(int _)
     {
+        OnUpdate += NotifyLanguageSelectionChanges;
+    }
+
+    private void NotifyLanguageSelectionChanges()
+    {
+        var option = _languageSelectionDD.value;
         var language = _languageDD.options[option].text.ToLower()[..2];
         Options.Language = language;
         OnLanguageChangesEvent?.Invoke(language);

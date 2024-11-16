@@ -22,9 +22,4 @@ public class DisclaimerCanvas : MonoBehaviour
     {
         
     }
-
-    public void OnDisclaimerSubmitClick()
-    {
-        ConfigBehaviour.Singleton.OnDisclaimerLanguageValueChanged(_languageSelectionDD.value);
-    }
 }
