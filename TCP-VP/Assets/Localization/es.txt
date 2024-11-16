@@ -1,1 +1,2 @@
 Espanol
+LanguageSelectionButton:	Aceptar

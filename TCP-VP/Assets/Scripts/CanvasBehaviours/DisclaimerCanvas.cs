@@ -12,6 +12,7 @@ public class DisclaimerCanvas : MonoBehaviour
     [SerializeField] private TMP_Dropdown _languageSelectionDD;
 
     [SerializeField] private List<TextAsset> _languageDisclaimers;
+    [SerializeField] private TextAsset _consoleSubmit;
 
     [SerializeField] private float _disclaimerSpeed;
     private Dictionary<string, string> Disclaimers { get; set; }
@@ -48,20 +49,39 @@ public class DisclaimerCanvas : MonoBehaviour
     {
         _languageSelection.SetActive(false);
         ConfigBehaviour.Singleton.UpdateOptions();
-        var rutine = StartCoroutine(nameof(ShowDisclaimer));
+        StartCoroutine(nameof(ShowDisclaimer));
     }
 
     private IEnumerator ShowDisclaimer()
     {
+        var text = _consoleSubmit.text;
+        if (_languageSelectionConsole.IsActive())
+            for (int i = -2; i < text.Length; i++)
+            {
+                char c;
+                if (i == -2 || i == -1)
+                    c = ConfigBehaviour.Singleton.Options.Language.ToLower()[i + 2];
+                else
+                    c = text[i];
+                _languageSelectionConsole.text += c;
+                float speed = _disclaimerSpeed / 100;
+                if (c.ToString() == Environment.NewLine)
+                    speed *= 100;
+                yield return new WaitForSecondsRealtime(speed);
+            }
+        yield return new WaitForSecondsRealtime(1.5f);
+        _languageSelectionConsole.gameObject.SetActive(false);
+        _languageSelectionDisclaimer.gameObject.SetActive(true);
         var disclaimer = Disclaimers[ConfigBehaviour.Singleton.Options.Language];
         for (int i = 0; i < disclaimer.Length; i++)
         {
-            float speed = _disclaimerSpeed;
+            float speed = _disclaimerSpeed / 10;
             if (disclaimer[i].ToString() == Environment.NewLine)
-                speed *= 10;
-            _languageSelectionConsole.text += disclaimer[i];
+                speed *= 100;
+            _languageSelectionDisclaimer.text += disclaimer[i];
             yield return new WaitForSecondsRealtime(speed);
         }
         yield return new WaitForSecondsRealtime(_disclaimerSpeed * 100);
+        CanvasScene.Singleton.ChangeScene(Scene.MainMenu);
     }
 }

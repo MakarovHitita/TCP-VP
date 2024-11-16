@@ -11,7 +11,9 @@ public class LanguageInObjectSelector : MonoBehaviour
     {
         Name = _objectReference.name;
         Text = GetComponent<TMP_Text>();
+        Text.color = Color.white;
         ConfigBehaviour.Singleton.AddOnNotifyLanguageChnagesEvent(ChangeLanguageText);
+        Text.text = LanguageManager.Singleton.LanguageTexts["en"][Name];
     }
 
     // Update is called once per frame
