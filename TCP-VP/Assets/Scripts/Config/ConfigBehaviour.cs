@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -138,6 +139,14 @@ public class ConfigBehaviour : MonoBehaviour
     private void UpdateOptions()
     {
         OnUpdate?.Invoke();
+        OnUpdate = null;
+    }
+
+    public void DiscardChanges()
+    {
+        OnUpdate = null;
+        _daltonismDD.value = (int)Options.DaltonismType;
+        _languageDD.value = LanguageManager.Singleton.LanguageIndex[Options.Language];
     }
 
     private void OnDestroy()

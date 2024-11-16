@@ -8,6 +8,7 @@ public class LanguageManager : MonoBehaviour
     [SerializeField] private List<TextAsset> _texts;
 
     public List<string> Languages { get; private set; }
+    public Dictionary<string, int> LanguageIndex { get; private set; }
     public Dictionary<string, Dictionary<string, string>> LanguageTexts { get; private set; }
 
     private void Awake()
@@ -17,9 +18,11 @@ public class LanguageManager : MonoBehaviour
             Singleton = this;
             LanguageTexts = new();
             Languages = new();
+            LanguageIndex = new();
             for (int i = 0; i < _texts.Count; i++)
             {
                 LanguageTexts.Add(_texts[i].name, new());
+                LanguageIndex.Add(_texts[i].text, i);
                 var languageText = _texts[i].text.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
                 Languages.Add(languageText[0]);
                 for (int j = 1; j < languageText.Length; j++)
