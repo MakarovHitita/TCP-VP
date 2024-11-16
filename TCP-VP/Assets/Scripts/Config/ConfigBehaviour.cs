@@ -20,17 +20,14 @@ public enum DaltonismType
 public class ConfigOptions
 {
     [SerializeField] private DaltonismType _daltonismType;
-    public DaltonismType DaltonismType { get => _daltonismType; set { _daltonismType = value; OnUpdate?.Invoke(); } }
+    public DaltonismType DaltonismType { get => _daltonismType; set => _daltonismType = value; }
     [SerializeField] private string _language;
-    public string Language { get => _language; set { _language = value; OnUpdate?.Invoke(); } }
+    public string Language { get => _language; set => _language = value; }
 
-    private event Action OnUpdate;
-
-    public ConfigOptions(Action onUpdate)
+    public ConfigOptions()
     {
-        OnUpdate = onUpdate;
         _daltonismType = DaltonismType.NoDaltonism;
-        _language = "en";
+        _language = "";
     }
 }
 
@@ -98,7 +95,7 @@ public class ConfigBehaviour : MonoBehaviour
 
     private void RegenerateConfigFile(string configPath)
     {
-        Options = new(UpdateOptions);
+        Options = new();
         File.WriteAllText(configPath, JsonUtility.ToJson(Options, true));
     }
 
@@ -134,18 +131,18 @@ public class ConfigBehaviour : MonoBehaviour
 
     public void OnDisclaimerLanguageValueChanged(int _)
     {
-        OnUpdate += NotifyLanguageSelectionChanges;
+        OnUpdate += NotifyDisclaimerLanguageChanges;
     }
 
-    private void NotifyLanguageSelectionChanges()
+    private void NotifyDisclaimerLanguageChanges()
     {
         var option = _languageSelectionDD.value;
-        var language = _languageDD.options[option].text.ToLower()[..2];
+        var language = _languageSelectionDD.options[option].text.ToLower()[..2];
         Options.Language = language;
         OnLanguageChangesEvent?.Invoke(language);
     }
 
-    private void UpdateOptions()
+    public void UpdateOptions()
     {
         OnUpdate?.Invoke();
         OnUpdate = null;

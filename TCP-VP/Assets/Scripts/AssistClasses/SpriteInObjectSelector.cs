@@ -7,17 +7,11 @@ public class SpriteInObjectSelector : MonoBehaviour
     private string Name { get; set; }
     private SpriteRenderer _spriteRenderer;
 
-    private void Awake()
+    private void Start()
     {
         Name = _objectReference.name;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         ConfigBehaviour.Singleton.AddOnNotifyDaltonismChangesEvent(ChangeDaltonismSprite);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
     }
 
     // Update is called once per frame

@@ -7,17 +7,11 @@ public class LanguageInObjectSelector : MonoBehaviour
     private TMP_Text Text { get; set; }
     private string Name { get; set; }
 
-    private void Awake()
+    private void Start()
     {
         Name = _objectReference.name;
         Text = GetComponent<TMP_Text>();
         ConfigBehaviour.Singleton.AddOnNotifyLanguageChnagesEvent(ChangeLanguageText);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
