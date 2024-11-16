@@ -278,7 +278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: hhhh
+  m_text: Minas criptomonedas. Ataca a la GPU. Carta de virus.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84d09631b59d3944eb57974784ff46bc, type: 2}
   m_sharedMaterial: {fileID: -4196112449155964949, guid: 84d09631b59d3944eb57974784ff46bc, type: 2}
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'AVAST
+  m_text: 'MINERO
 
 
 '
