@@ -1,0 +1,29 @@
+------- Choose a language -------
+
+C:\Users\4vL0o> sys use :	
+
+!n!t!@l!z!ng... ?
+R3tr!3v!ng l@ngu@g3 p@ck3t$: ********** D3t3ct3d
+L0@d!ng tr@nsl@t!0n m0dul3$...
+
+>>> [C0nf!gur@t!0n]: [Curr3nt L@ngu@g3: $p@n!$h] > [T@rg3t: 3ngl!$h]
+>>> Tr@nsf3rr!ng r3$l0urc3$ ???????????... C0mpl3t3d
+
+`-##[W@rn!ng: M!$$!ng P@ck3t$ D3t3ct3d]##-`
+`---> Sk!pp!ng c0mpl3t!0n ch3ck...`
+
+Upd@t!ng $y$t3m v@lu3$:
+    - UI_L@ngu@g3.cfg... OK
+    - k3y_l@y0ut.m@p... OK
+    - $ys_d3f@ult.l@ng... F@!l (R3pl@c3m3nt: F0rc3d)
+
+    *** L!ngu!$t!c $3tt!ng$ ov3rwr!tt3n ***
+    *** L09$ Upd@t3d ***
+    p@r@m3t3r#3rr~<>$t@tU$...#@ct!v3
+
+R3$l0@d!ng k3yb0@rd @nd l@ngu@g3 $3tt!ng$...
+>>> [cph:/r00t/pth] > upd@t3 l@ngu@g3_p@ck...
+>>> [@x192] > $ucc3$$ | N3w_l@ng.cfg @ppl!3d
+>>> Sw!tch!ng t0: 3ngl!$h ??????
+
+>>> W@rn!ng: Ch@ng3 m@y n0t b3 r3v3r$!bl3.

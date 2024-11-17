@@ -13,6 +13,11 @@ public enum Scene
     Config,
 }
 
+public interface ISceneCanvas
+{
+    public void RestartConsoles();
+}
+
 public class CanvasScene : MonoBehaviour
 {
     public static CanvasScene Singleton { get; private set; }
@@ -22,12 +27,15 @@ public class CanvasScene : MonoBehaviour
     [SerializeField] private List<GameObject> _uiSceneParts;
     private Dictionary<Scene, GameObject> SceneUIDic { get; set; }
 
+    private Canvas Canvas { get; set; }
+
     private void Awake()
     {
         if (Singleton == null)
         {
             Singleton = this;
 
+            Canvas = GetComponent<Canvas>();
             _actualScene = 0;
             SceneUIDic = new();
             var list = Enum.GetNames(typeof(Scene)).ToList();
@@ -62,9 +70,22 @@ public class CanvasScene : MonoBehaviour
 
     public void ChangeScene(Scene scene)
     {
+        if (scene == Scene.MainMenu)
+        {
+            Canvas.renderMode = RenderMode.WorldSpace;
+            Canvas.sortingLayerID = 1;
+        }
+        else if (_actualScene == Scene.MainMenu)
+        {
+            Canvas.renderMode = RenderMode.ScreenSpaceCamera;
+            Canvas.sortingLayerID = 0;
+        }
+
         SceneUIDic[_actualScene].SetActive(false);
         SceneUIDic[scene].SetActive(true);
         _actualScene = scene;
+        if (scene != Scene.Config)
+            SceneUIDic[scene].GetComponent<ISceneCanvas>().RestartConsoles();
         if (_actualScene != Scene.Config)
             SceneManager.LoadScene((int)scene);
     }
