@@ -1,2 +1,16 @@
 Espanol
 LanguageSelectionButton:	Aceptar
+TitleButton:	Empezar
+RestartButton:	Volver
+CreditsButton:	Creditos
+GameButton:	Jugar
+ExitButton:	Salir
+SingleButton:	Jugar Solo
+MultiButton:	En Linea
+Tutorial:	Tutorial
+FastMatchButton:	Buscar
+CreateLobbyButton:	Crear
+JoinLobbyButton:	Unirse
+InputCodeIF:	Codigo ...
+SubmitCodeButton:	Unirse
+ConfigButton:	Ajustes

@@ -1,6 +1,5 @@
 Start:	sys exe 3n@bl3_h@ckm0d3.ex3
-------
-Start:	
+
 !n!t!@l!z!ng... █
 V@l!d@t!ng k3y: ********** @uth0r!z3d
 Unl0ck!ng $y$t3m r3$tr!ct!0n$...
@@ -28,8 +27,7 @@ R3wr!t!ng $y$t3m p@r@m3t3r$...
 >>> W@rn!ng: !ll3g@l 0p3r@t!0n d3t3ct3d. Pr0c33d @t y0ur 0wn r!$k.
 
 C:\Users\4vL0o> ___Tutorial:	h@ck s!mul@t!0n_m0d3
-------
-Tutorial:	
+	
 !n!t!@l!z!ng tut0r!@l m0d3... █
 C0nn3ct!ng t0 s!mul@t!0n s3rv3r: ********** Succ3$$ful
 L0@d!ng 3nv!r0nm3nt $3tt!ng$ ███████████... C0mpl3t3d
@@ -56,8 +54,7 @@ Pr3p@r!ng $!mul@t3d @$$3t$ ██████
 >>> Pr3$$ @ny k3y t0 b3g!n th3 tut0r!@l...
 
 C:\Users\4vL0o> ___Game:	h@ck prep@r3_m0dul3$
-------
-Game:	
+
 !n!t!@l!z!ng g@me m0d3... █
 Ch3ck!ng $y$t3m r3$0urc3$ ██████████ 100%
 L0@d!ng g@me m0dul3$...
@@ -81,5 +78,200 @@ Pr3p@r!ng g@me m0d3 $3tt!ng$:
 >>> All m0dul3$ @r3 n0w r3@dy.
 >>> Ch00$3 y0ur g@me m0d3 t0 pr0c33d ████
 >>> TYP3 "m0d3_l!$t" f0r @v@!l@bl3 0pt!0n$.
+
+C:\Users\4vL0o> ___Config:	h@ck c0nf!gur@t!0n_m0d3
+
+!n!t!@l!z!ng c0nf!gur@t!0n 3nv!r0nm3nt... █
+Ch3ck!ng $y$t3m pr3f3r3nc3$ ██████████ 100%
+L0@d!ng $3tt!ng$ m0dul3$...
+
+    - Gr@ph!c$_0pt!0n$.dll... OK
+    - @ud!0_$3tt!ng$.cfg... OK
+    - K3yb!nd$c0ntr0l$.m0d... OK
+    - N3tw0rk_pr3f$.cfg... Sk!pp3d (N0t R3qu!r3d)
+
+>>> V3r!fy!ng u$3r pr0f!l3 pr3f3r3nc3$ ██████ C0mpl3t3d
+>>> Synchr0n!z!ng c0nf!gur@t!0n d@t@... Succ3$$ful
+
+`-##[W@rn!ng: S0m3 $3tt!ng$ r3qu!r3 r3st@rt t0 @pply]##-`
+
+Pr3p@r!ng $3tt!ng$ m3nu:
+    - D!$pl@y_0pt!0n$.cfg... L0@d3d
+    - G@mepl@y_$3tt!ng$.cfg... L0@d3d
+    - @dv@nc3d_c0ntr0l$.cfg... L0@d3d
+
+>>> All c0nf!gur@t!0n m0dul3$ @r3 n0w r3@dy.
+>>> Br0w$3 th3 m3nu t0 m@k3 ch@ng3$ ████
+>>> TYP3 "h3lp" f0r @$$!$t@nc3 w!th $3tt!ng$.___Single:	h@ck @g@!n$t_@I
+
+!n!t!@l!z!ng $!ngl3-pl@y3r m0d3... █
+Ch3ck!ng $y$t3m c0mp0n3nt$ ██████████ 100%
+C0nn3ct!ng t0 AI_c0r3... Succ3$$ful
+
+L0@d!ng g@me_r3$0urc3$:
+    - Pl@y3r_$t@t$.cfg... OK
+    - AI_b3h@v!0r.m0d... OK
+    - M@p_D@t@_$3t.$3c... OK
+    - W3@p0n_L0@d0ut$.dll... Succ3$$ful
+
+>>> V3r!fy!ng 0pp0n3nt $3tt!ng$: 
+    - AI_d!ff!culty: @dv@nc3d ██████
+    - AI_str@t3gy_m0dul3$... OK
+    - $imul@t!0n_r3@ct!0n_t!m3: F@st
+
+>>> Synchr0n!z!ng s3$$!0n d@t@ ██████ C0mpl3t3d
+>>> AI pr0f!l3: "N3ur0N3t_v2.0" L0@d3d
+
+`-##[W@rn!ng: AI_h@nd!c@p N0t Act!v3]##-`
+`---> Opp0n3nt w!ll ut!l!z3 full c@p@b!l!t!3$`
+
+Pr3p@r!ng g@me $3tt!ng$:
+    - G@mepl@y_m0dul3$: $t@nd@rd
+    - R3$0urc3_$@v3_m0d3: Act!v3
+    - M@p: R@nd0m ██████
+
+>>> All m0dul3$ @r3 n0w l0@d3d.___Multi:	h@ck n3tw0rk_m0d3
+
+!n!t!@l!z!ng mult!pl@y3r $3tt!ng$... █
+Ch3ck!ng n3tw0rk c0nn3ct!v!ty ██████████ Succ3$$ful
+C0nn3ct!ng t0 g@me s3rv3r: ********** V3r!f!3d
+
+L0@d!ng mult!pl@y3r m0dul3$:
+    - N3tw0rk_$ync.dll... OK
+    - Pl@y3r_L0bb!3s.cfg... OK
+    - G@me_M0d3_$3l3ct!0n.m0d... OK
+    - Ch@t_S3rv!c3.dll... Succ3$$ful
+
+>>> Synchr0n!z!ng pl@y3r pr0f!l3 w!th s3rv3r ██████ C0mpl3t3d
+>>> V3r!fy!ng $3cur3_c0nn3ct!0n: Encry!pt!0n_Act!v3 ██████
+
+`-##[W@rn!ng: L@t3ncy_ch3ck_sk!pp3d]##-`
+`---> P!ng m@y v@ry d3p3nd!ng 0n h0$t`
+
+Pr3p@r!ng mult!pl@y3r $3tt!ng$:
+    - M@tchm@k!ng_m0d3: L0@d3d
+    - T3@m_$3tt!ng$: Cust0m
+    - G@me_typ3_$@v3: $upp0rt3d ██████
+
+>>> All mult!pl@y3r m0dul3$ @r3 n0w r3@dy.
+>>> Ch00$3 y0ur g@me_typ3 t0 pr0c33d ████
+>>> TYP3 "l!$t_m0d3$" f0r @v@!l@bl3 g@me typ3$.
+
+C:\Users\4vL0o> ___CreateLobby:	h@ck h0$t_m0d3
+
+!n!t!@l!z!ng l0bb¥ cr3@t!0n... █
+Ch3ck!ng n3tw0rk st@tus ██████████ Succ3$$ful
+C0nn3ct!ng t0 $3rv3r_n0d3: ********** V3r!f!3d
+
+L0@d!ng h0$t m0dul3$:
+    - L0bb¥_C0ntr0l.dll... OK
+    - T3@m_$3tt!ng$.cfg... OK
+    - G@me_Rul3$_m0d3.$3c... L0@d3d
+    - Ch@t_S3rv!c3.dll... Act!v3
+
+>>> Synchr0n!z!ng h0$t pr!v!l3g3$ ██████ C0mpl3t3d
+>>> G3n3r@t!ng L0bb¥_ID: #@X192_F8K-L0BB¥
+>>> S3cur!ng L0bb¥ Acc3$$: P@$$c0d3_M0d3 ██████ En@bl3d
+>>> TYP3 "!nv!t3" t0 sh@r3 l0bb¥ c0d3 w!th 0th3r$.
+
+`-##[N0t!c3: L0bb¥ w!ll @ut0-cl0$3 !f !n@ct!v3 f0r 5 m!n]##-`___JoinLobby:	h@ck j0!n_m0d3
+
+!n!t!@l!z!ng l0bb¥ c0nn3ct!0n... █
+Ch3ck!ng n3tw0rk @v@!l@b!l!ty ██████████ Succ3$$ful
+V3r!fy!ng $3rv3r_r3$0urc3$: ********** OK
+
+L0@d!ng c0nn3ct!0n m0dul3$:
+    - L0bb¥_F!nd3r.dll... OK
+    - Pl@¥3r_pr0f!l3.$3c... Succ3$$ful
+    - S3rv3r_$ync.m0d... OK
+    - Ch@t_S3rv!c3.dll... R3@dy
+
+Pr3p@r!ng t0 c0nn3ct t0 sp3c!f!c l0bb¥:
+    - V@l!d@t!ng c0d3... W@!t!ng
+    - Ch3ck!ng H0$t St@tus... P3nd!ng
+    - L0@d!ng R3$0urc3_$ync: P@rtl¥ R3@dy
+
+>>> 3nt3r L0bb¥_C0d3 @nd pr3$$ [3nt3r] t0 c0nt!nu3 ████
+>>> TYP3 "!h3lp" f0r @$$!$t@nc3 w!th c0nn3ct!0n.
+
+C:\Users\4vL0o> ___ConnectLobby:	h@ck l0bb¥_c0d3:?
+
+V@l!d@t!ng L0bb¥ C0d3... Succ3$$ful
+Ch3ck!ng h0$t c0nn3ct!v!ty ██████████ OK
+Synchr0n!z!ng pl@¥3r d@t@ w!th h0$t ██████ C0mpl3t3d
+
+L0@d!ng g@me r3$0urc3$:
+    - Pl@¥3r_$t@t$.dll... OK
+    - G@me_Rul3$_Sync.cfg... Succ3$$ful
+
+`-##[W@rn!ng: H!gh p!ng m@y @ff3ct y0ur p3rf0rm@nc3]##-`___FastMatch:	h@ck r@nd0m_m@tch
+
+!n!t!@l!z!ng qu!ck_j01n pr0c3$$... █
+Sc@nn!ng f0r @v@!l@bl3 m@tch3$ ██████████
+
+C0nn3ct!ng t0 s3rv3r ██████████ Succ3$$ful
+Synchr0n!z!ng pl@¥3r pr0f!l3 w!th s3rv3r ██████ C0mpl3t3d
+
+L0@d!ng g@me r3$0urc3$:
+    - Pl@¥3r_$t@t$.dll... OK
+    - G@me_Rul3$_Sync.cfg... Succ3$$ful
+
+>>> Y0u h@v3 succ3$$fully j01n3d @ r@nd0m m@tch ████___CancelModules:	h@ck d3f@ult
+
+!n!t!@t!ng r3s3t pr0c3$$... █
+D3@ct!v@t!ng @ct!v3 m0dul3$:
+    - G@me_Rul3$_Sync.cfg... D3@ct!v@t3d
+    - Pl@¥3r_$t@t$.dll... C0mpl3t3d
+    - Ch@t_S3rv!c3.dll... T3rm!n@t3d
+    - Mult!pl@¥3r_$ync.m0d... C0mpl3t3d
+
+>>> R3$t0r!ng m0dul3$ t0 d3f@ult:
+    - L0bb¥_$3tt!ng$.cfg... R3$t0r3d
+    - G@me_M0d3_S3l3ct!0n... Succ3$$ful
+
+M@!nt@!n!ng c0nf!gur@t!0n v@lµ3$ ██████ Pr3s3rv3d:
+    - U$3r_$3tt!ng$... $t@bl3
+    - D!$pl@¥_$3tt!ng$: OK
+    - K3¥b!nd$... Unch@ng3d
+
+`-##[W@rn!ng: $0m3 uns@v3d d@t@ m@y b3 l0st]##-`
+
+C0nn3ct!ng t0 m@!n m3nu:
+    - L0@d!ng C0r3_M0dul3$.dll ██████ R3@dy
+    - L0@d!ng W3lc0m3_Scr33n.cfg ██████ C0mpl3t3d
+
+>>> Pr0gr@mm3 r3$t@rt3d. R3@dy f0r n3w @ct!v!ty ████
+
+C:\Users\4vL0o> ___Exit:	shutd0wn
+
+ShUtD0wn pr0c3$$... █
+C0nfirm!ng @ct!v3 pr0gr@ms... ████████ T3rm!n@t3d
+Dis@bl!ng h!gh-p3rf0rm@nc3 m0dul3$... C0mpl3t3d
+
+>>> R3s3t!ng sysT3m t0 n0rm@l m0d3 ██████
+L0@d!ng n0rm@l sysT3m s3tt!ng$:
+    - W!nd0ws_Us3r_Mode... R3st@rt3d
+    - G3n3r@l_Conf!g@t!0n_$ys... OK
+    - N3tw0rk m0d3: S@f3 ████
+    - C0ntr0l_P@nel: N0rm@l ████
+
+>>> D3@ct!v@t!ng h@ck3r_m0d3 ██████ C0mpl3t3d
+>>> R3$t@rt!ng sy$t3m f0r ch@ng3$ t0 @pply
+
+R3$t@rt3d: H@v3 @ n!c3 d@¥! ████
+
+`-##[Syst3m w!ll cl0s3 @fter pr0gr@mm3r's l@st c0mm@nd]##-`
+
+>>> Cl0s!ng pr0gr@mm3 ██████
+>>> W!nd0ws h@v3 b33n r3st@r3d t0 n0rm@l ██████
+>>> @pply!ng ch@ng3$... C0mpl3t3d
+>>> Ex!t@ng t0 m@!n scr33n... C0mpl3t3d___Credits:	h@ck d3v3l0p3r$
+
+>>> L0@d!ng g@me cr3d!ts... ██████ C0mpl3t3d
+
+G@m3 D3v3l0p3rs:
+    - **Alv@rJ!m** - Jvst!c3 P!l0t Pl@y@b!l!ty
+    - **6@l3xW3ng9** - Art!st!c D3s!gn & Gr@ph!cs
+    - **M@k@r0v_H!t!t@** - G@me D3s!gn & Syst3m C0r3
 
 C:\Users\4vL0o> ___

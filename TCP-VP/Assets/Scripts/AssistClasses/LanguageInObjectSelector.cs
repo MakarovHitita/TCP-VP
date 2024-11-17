@@ -6,12 +6,13 @@ public class LanguageInObjectSelector : MonoBehaviour
     [SerializeField] private GameObject _objectReference;
     private TMP_Text Text { get; set; }
     private string Name { get; set; }
+    [SerializeField] private bool _white;
 
     private void Start()
     {
         Name = _objectReference.name;
         Text = GetComponent<TMP_Text>();
-        Text.color = Color.white;
+        Text.color = _white ? Color.white : Color.black;
         ConfigBehaviour.Singleton.AddOnNotifyLanguageChnagesEvent(ChangeLanguageText);
         Text.text = LanguageManager.Singleton.LanguageTexts["en"][Name];
     }
