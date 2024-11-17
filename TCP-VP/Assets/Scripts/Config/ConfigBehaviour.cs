@@ -22,7 +22,8 @@ public class ConfigOptions
     [SerializeField] private DaltonismType _daltonismType;
     public DaltonismType DaltonismType { get => _daltonismType; set => _daltonismType = value; }
     [SerializeField] private string _language;
-    public string Language { get => _language; set => _language = value; }
+    public string Language { get => string.IsNullOrEmpty(_language) ? "en" : _language; set => _language = value; }
+    public bool IsLanguageDefined {  get => !string.IsNullOrEmpty(_language); }
 
     public ConfigOptions()
     {
@@ -47,19 +48,21 @@ public class ConfigBehaviour : MonoBehaviour
 
     public ConfigOptions Options { get; private set; }
 
+    private string _configPath;
+
     private void Awake()
     {
         if (Singleton == null)
         {
             Singleton = this;
 
-            var path = Path.Combine(Application.persistentDataPath, "Config", "config.json");
+            _configPath = Path.Combine(Application.persistentDataPath, "Config", "config.json");
             Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, "Config"));
-            if (File.Exists(path))
+            if (File.Exists(_configPath))
             {
                 try
                 {
-                    var json = File.ReadAllText(path);
+                    var json = File.ReadAllText(_configPath);
                     Options = JsonUtility.FromJson<ConfigOptions>(json);
 
                     if (Options == null)
@@ -68,12 +71,12 @@ public class ConfigBehaviour : MonoBehaviour
                 catch
                 {
                     Debug.LogWarning("El archivo de configuración es inválido. Regenerando...");
-                    RegenerateConfigFile(path);
+                    RegenerateConfigFile();
                 }
             }
             else
             {
-                RegenerateConfigFile(path);
+                RegenerateConfigFile();
             }
 
         }
@@ -93,10 +96,10 @@ public class ConfigBehaviour : MonoBehaviour
 
     }
 
-    private void RegenerateConfigFile(string configPath)
+    private void RegenerateConfigFile()
     {
         Options = new();
-        File.WriteAllText(configPath, JsonUtility.ToJson(Options, true));
+        File.WriteAllText(_configPath, JsonUtility.ToJson(Options, true));
     }
 
     public void AddOnNotifyDaltonismChangesEvent(OnNotifyDaltonismChangesHandler handler) => OnDaltonismChangesEvent += handler;
@@ -129,7 +132,7 @@ public class ConfigBehaviour : MonoBehaviour
         OnLanguageChangesEvent?.Invoke(language);
     }
 
-    public void OnDisclaimerLanguageValueChanged(int _)
+    public void OnDisclaimerLanguageValueChanged()
     {
         OnUpdate += NotifyDisclaimerLanguageChanges;
     }
@@ -145,6 +148,8 @@ public class ConfigBehaviour : MonoBehaviour
     public void UpdateOptions()
     {
         OnUpdate?.Invoke();
+        File.Delete(_configPath);
+        File.WriteAllText(_configPath, JsonUtility.ToJson(Options, true));
         OnUpdate = null;
     }
 

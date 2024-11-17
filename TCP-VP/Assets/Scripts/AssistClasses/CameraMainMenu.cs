@@ -22,9 +22,8 @@ public class CameraMainMenu : MonoBehaviour
         
     }
 
-    public bool DoAnimation(float timeTillNextCall)
+    public bool DoAnimation(int steps)
     {
-        int steps = (int)(_animationDuration / timeTillNextCall);
         Vector3 posDisplacement = (_targetPosition - _initPosition) / steps;
         Vector3 rotDisplacement = (_targetRotation - _initRotation) / steps;
         if (transform.position + posDisplacement == _targetPosition)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum MainMenuActionButtons
 {
@@ -31,6 +32,7 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
     [SerializeField] private TextAsset _mainMenuConsoleCommands;
 
     [SerializeField] private TMP_Text _mainMenuConsole;
+    [SerializeField] private ScrollRect _mainMenuConsoleManager;
     [SerializeField] private TMP_InputField _inputCodeIF;
 
     [SerializeField] private GameObject _titleButton;
@@ -40,6 +42,8 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
     [SerializeField] private GameObject _multiMenu;
     [SerializeField] private GameObject _createLobbyMenu;
     [SerializeField] private GameObject _joinLobbyMenu;
+
+    private GameObject _activeMenu;
     private Dictionary<MainMenuActionButtons, string> MainMenuCommands { get; set; }
 
     private void Awake()
@@ -50,7 +54,7 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
         MainMenuActionButtons action = MainMenuActionButtons.None;
         for (int i = 0; i < commands.Length; i++)
         {
-            var command = commands[i].Split(":\t", StringSplitOptions.RemoveEmptyEntries)[0].Split("_");
+            var command = commands[i].Split(":\t", StringSplitOptions.RemoveEmptyEntries);
             for (int j = 0; j < listActions.Length; j++)
             {
                 if (listActions[j] == command[0])
@@ -84,6 +88,7 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
 
     public void OnTitleButtonClick()
     {
+        Debug.Log("hvjkasdbhgvkjsa");
         _titleButton.SetActive(false);
         StartCoroutine(StartMenu());
     }
@@ -99,9 +104,17 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
         _joinLobbyMenu.SetActive(false);
     }
 
+    public void OnRestartButtonClick()
+    {
+        _activeMenu.SetActive(false);
+        _activeMenu = null;
+        StartCoroutine(WriteConsole(MainMenuCommands[MainMenuActionButtons.CancelModules], ShowFirstMenu));
+    }
+
     private void ShowFirstMenu()
     {
         _firstMenu.SetActive(true);
+        _activeMenu = _firstMenu;
     }
 
     public void OnCreditsButtonClick()
@@ -119,6 +132,8 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
     private void ShowGameModes()
     {
         _gameMenu.SetActive(true);
+        _restartButton.SetActive(true);
+        _activeMenu = _gameMenu;
     }
 
     public void OnExitButtonClick()
@@ -147,6 +162,7 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
     private void ShowMultiModes()
     {
         _multiMenu.SetActive(true);
+        _activeMenu = _multiMenu;
     }
 
     public void OnSingleButtonClick()
@@ -191,6 +207,7 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
     private void ShowJoinLobby()
     {
         _joinLobbyMenu.SetActive(true);
+        _activeMenu = _joinLobbyMenu;
     }
 
     public void OnJoinCodeButtonClick()
@@ -219,13 +236,14 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
     {
         float time;
         bool animationFinished = false;
-        var text = MainMenuCommands[MainMenuActionButtons.Config];
+        var text = MainMenuCommands[MainMenuActionButtons.Start];
         for (int i = 0; i < text.Length; i++)
         {
             time = _timeForCharConsole;
             if (!animationFinished)
-                animationFinished = _camera.DoAnimation(time);
+                animationFinished = _camera.DoAnimation(text.Length);
             _mainMenuConsole.text += text[i];
+            _mainMenuConsoleManager.verticalNormalizedPosition = 0;
             if (text[i] == Environment.NewLine[0])
                 time *= 100;
             yield return new WaitForSecondsRealtime(time);
@@ -240,6 +258,7 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
         {
             time = _timeForCharConsole;
             _mainMenuConsole.text += text[i];
+            //_mainMenuConsoleManager.verticalNormalizedPosition = 0;
             if (text[i] == Environment.NewLine[0])
                 time *= 100;
             yield return new WaitForSecondsRealtime(time);
@@ -255,6 +274,7 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
         {
             time = _timeForCharConsole;
             _mainMenuConsole.text += textParts[0][i];
+            _mainMenuConsoleManager.verticalNormalizedPosition = 0;
             if (textParts[0][i] == Environment.NewLine[0])
                 time *= 100;
             yield return new WaitForSecondsRealtime(time);
@@ -263,6 +283,7 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
         {
             time = _timeForCharConsole;
             _mainMenuConsole.text += _inputCodeIF.text[i];
+            _mainMenuConsoleManager.verticalNormalizedPosition = 0;
             if (_inputCodeIF.text[i] == Environment.NewLine[0])
                 time *= 100;
             yield return new WaitForSecondsRealtime(time);
@@ -271,6 +292,7 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
         {
             time = _timeForCharConsole;
             _mainMenuConsole.text += textParts[1][i];
+            _mainMenuConsoleManager.verticalNormalizedPosition = 0;
             if (textParts[1][i] == Environment.NewLine[0])
                 time *= 100;
             yield return new WaitForSecondsRealtime(time);

@@ -88,14 +88,13 @@ public class CanvasScene : MonoBehaviour
         }
         else if (_actualScene == Scene.MainMenu)
         {
-            Canvas.renderMode = RenderMode.ScreenSpaceCamera;
+            Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             Canvas.sortingLayerID = 0;
             _rectTransform.position = _recTransformPos;
         }
 
         SceneUIDic[_actualScene].SetActive(false);
         SceneUIDic[scene].SetActive(true);
-        _actualScene = scene;
         if (scene != Scene.Config)
             SceneUIDic[scene].GetComponent<ISceneCanvas>().RestartConsoles();
         switch (scene)
@@ -114,7 +113,8 @@ public class CanvasScene : MonoBehaviour
                 Canvas.transform.localScale = _configScale;
                 break;
         }
-        if (_actualScene != Scene.Config)
+        if (scene != Scene.Config)
             SceneManager.LoadScene((int)scene);
+        _actualScene = scene;
     }
 }

@@ -34,12 +34,12 @@ public class DisclaimerCanvas : MonoBehaviour
             Disclaimers.Add(_languageDisclaimers[i].name[..2], _languageDisclaimers[i].text);
         }
 
-        if (string.IsNullOrEmpty(ConfigBehaviour.Singleton.Options.Language))
+        if (!ConfigBehaviour.Singleton.Options.IsLanguageDefined)
         {
             StartCoroutine(nameof(ShowLanguageSelector));
         }
         else
-            Submit();
+            SubmitNoLanguage();
     }
 
     // Update is called once per frame
@@ -48,11 +48,25 @@ public class DisclaimerCanvas : MonoBehaviour
 
     }
 
-    public void Submit()
+    public void SubmitNoLanguage()
+    {
+        Submit(false);
+    }
+
+    public void OnSubmitButtonClick()
+    {
+        Submit(true);
+    }
+
+    private void Submit(bool hasLanguageShown = true)
     {
         _languageSelection.SetActive(false);
-        ConfigBehaviour.Singleton.UpdateOptions();
-        StartCoroutine(nameof(ShowDisclaimer));
+        if (hasLanguageShown)
+        {
+            ConfigBehaviour.Singleton.OnDisclaimerLanguageValueChanged();
+            ConfigBehaviour.Singleton.UpdateOptions();
+        }
+        StartCoroutine(ShowDisclaimer(hasLanguageShown));
     }
 
     private IEnumerator ShowLanguageSelector()
@@ -78,36 +92,37 @@ public class DisclaimerCanvas : MonoBehaviour
         _languageSelectionDD.gameObject.SetActive(true);
         _languagesSelectionB.gameObject.SetActive(true);
     }
-    
-    private IEnumerator ShowDisclaimer()
+
+    private IEnumerator ShowDisclaimer(bool hasLanguageShown)
     {
         var text = SubmitConsole;
-        if (_languageSelectionConsole.IsActive())
-            for (int i = -3; i < text.Length; i++)
+        string language = ConfigBehaviour.Singleton.Options.Language.ToLower();
+        if (hasLanguageShown)
+        {
+            for (int i = 0; i < language.Length; i++)
             {
-                char c;
-                float speed = _disclaimerTimePerChar;
-                if (i == -3 || i == -2)
-                {
-                    c = ConfigBehaviour.Singleton.Options.Language.ToLower()[i + 3];
-                    speed *= 100;
-                }
-                else if (i == -1)
-                    c = Environment.NewLine[0];
-                else
-                    c = text[i];
-                _languageSelectionConsole.text += c;
-                if (c.ToString() == Environment.NewLine)
-                    speed *= 100;
-                yield return new WaitForSecondsRealtime(speed);
+                _languageSelectionConsole.text += language[i];
+                yield return new WaitForSecondsRealtime(_disclaimerTimePerChar * 100);
             }
+            yield return new WaitForSecondsRealtime(_disclaimerTimePerChar * 100);
+        }
+        float speed;
+        for (int i = 0; i < text.Length; i++)
+        {
+            speed = _disclaimerTimePerChar;
+            char c = text[i];
+            _languageSelectionConsole.text += c;
+            if (c == Environment.NewLine[0])
+                speed *= 100;
+            yield return new WaitForSecondsRealtime(speed);
+        }
         yield return new WaitForSecondsRealtime(1.5f);
         _languageSelectionConsole.gameObject.SetActive(false);
         _languageSelectionDisclaimer.gameObject.SetActive(true);
         var disclaimer = Disclaimers[ConfigBehaviour.Singleton.Options.Language];
+        speed = _disclaimerTimePerChar * 10;
         for (int i = 0; i < disclaimer.Length; i++)
         {
-            float speed = _disclaimerTimePerChar*10;
             if (disclaimer[i].ToString() == Environment.NewLine)
                 speed *= 100;
             _languageSelectionDisclaimer.text += disclaimer[i];

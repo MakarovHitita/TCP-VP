@@ -559,7 +559,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5066140044344121767}
         m_TargetAssemblyTypeName: DisclaimerCanvas, Assembly-CSharp
-        m_MethodName: Submit
+        m_MethodName: OnSubmitButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
