@@ -57,6 +57,7 @@ public class DisclaimerCanvas : MonoBehaviour
 
     private IEnumerator ShowLanguageSelector()
     {
+        yield return new WaitForSecondsRealtime(1);
         for (int i = 0; i < StartConsole.Length; i++)
         {
             char c = StartConsole[i];
@@ -73,6 +74,7 @@ public class DisclaimerCanvas : MonoBehaviour
             optionDatas.Add(new(languages[i], SpriteManager.Singleton.SpriteDictionary[DaltonismType.NoDaltonism]["DropdownOption"], Color.white));
         }
         _languageSelectionDD.AddOptions(optionDatas);
+        yield return new WaitForSecondsRealtime(0.5f);
         _languageSelectionDD.gameObject.SetActive(true);
         _languagesSelectionB.gameObject.SetActive(true);
     }
