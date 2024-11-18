@@ -14,3 +14,46 @@ JoinLobbyButton:	Unirse
 InputCodeIF:	Codigo ...
 SubmitCodeButton:	Unirse
 ConfigButton:	Ajustes
+NombreAvast:	AVAST
+DescripcionAvast:	Elimina los virus de la RAM. Carta de antivirus.
+NombreCPU:	CPU
+DescripcionCPU:	Unidad central de procesamiento. Carta de componente.
+NombreError:	ERROR
+DescripcionError:	Envias un error al siguiente oponente. No juega su turno. Carta de ataque.
+NombreEscudo:	ESCUDO
+DescripcionEscudo:	Evitas que salga un error en tu dispositivo. Bloqueas el ataque. Carta de defensa.
+NombreGPU:	GPU
+DescripcionGPU:	Tarjeta gráfica. Carta de componente.
+NombreKaspersky:	KASPERSKY
+DescripcionKaspersky:	Elimina los virus encontrados en el SSD. Carta de antivirus.
+NombreLinux:	LINUX
+DescripcionLinux:	Instalas Linux a un oponente. Eliminas todos sus antivirus. Carta de ataque.
+NombreMcAfee:	MCAFEE
+DescripcionMcAfee:	Elimina los virus encontrados en la GPU. Carta de antivirus.
+NombreMinero:	MINERO
+DescripcionMinero:	Minas criptomonedas. Afecta a la GPU. Carta de virus.
+NombrePanda:	PANDA
+DescripcionPanda:	Elimina los virus encontrados en la CPU. Carta de antivirus.
+NombreRAM:	RAM
+DescripcionRAM:	Memoria de acceso aleatorio. Carta de componente.
+NombreRansomware:	RANSOMWARE
+DescripcionRansomware:	Cifra los archivos del ordenador. Afecta al SSD. Carta de virus.
+NombreSpyware:	SPYWARE
+DescripcionSpyware:	Espia el dispositivo infectado. Afecta a la CPU. Carta de virus.
+NombreSSD:	SSD
+DescripcionSSD:	Disco duro del sistema. Carta de componente.
+NombreTroyano:	TROYANO
+DescripcionTroyano:	Ejecuta programas en segundo plano. Afecta a la RAM. Carta de virus.
+NombreWindows:	WINDOWS
+DescripcionWindows:	Instalas Windows durante la instalación de Linux. Bloqueas el ataque. Carta de defensa.
+tutorialBUT:	Siguiente
+titulo1Tutorial:	Cartas de componente
+texto1Tutorial:	Los componentes son los objetos que debes proteger e infectar a otros jugadores para ganar la partida.
+titulo2Tutorial:	Cartas de antivirus
+texto2Tutorial:	Los antivirus pueden desinfectar tus componentes si tienen virus. Si no tienen virus, se usan como escudo.
+titulo3Tutorial:	Cartas de virus
+texto3Tutorial:	Los virus pueden infectar tus componentes. Si un componente tiene un antivirus, lo elimina y lo deja vulnerable.
+titulo4Tutorial:	Cartas de ataque
+texto4Tutorial:	Las cartas de ataque se usan directamente sobre los jugadores rivales, afectando a sus componentes o a su tiempo de juego.
+titulo5Tutorial:	Cartas de defensa
+texto5Tutorial:	Las cartas de defensa sirven para protegerse de los ataques. Deben usarse justo despuÃ©s de ser atacado.

@@ -18,6 +18,11 @@ public interface ISceneCanvas
     public void RestartConsoles();
 }
 
+public interface ISceneUI
+{
+    public void SetActive(bool active);
+}
+
 public class CanvasScene : MonoBehaviour
 {
     public static CanvasScene Singleton { get; private set; }
