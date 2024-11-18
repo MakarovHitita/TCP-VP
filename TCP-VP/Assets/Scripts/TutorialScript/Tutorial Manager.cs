@@ -17,11 +17,6 @@ public class TutorialManager : MonoBehaviour, ISceneCanvas, ISceneUI
         _state = 0;
 
         SceneManager.activeSceneChanged += OnSceneChanged;
-
-        //Inicializar el estado inicial
-
-        //// Vincular el botón al método OnButtonPressed
-        //tutorialButton.onClick.AddListener(OnButtonPressed);
     }
 
     private void OnSceneChanged(UnityEngine.SceneManagement.Scene arg0, UnityEngine.SceneManagement.Scene arg1)
