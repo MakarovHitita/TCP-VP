@@ -88,7 +88,6 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas, ISceneUI
 
     public void OnTitleButtonClick()
     {
-        Debug.Log("hvjkasdbhgvkjsa");
         _titleButton.SetActive(false);
         StartCoroutine(StartMenu());
     }

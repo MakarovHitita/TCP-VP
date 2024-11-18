@@ -1,27 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro;
 
-public class TutorialManager : MonoBehaviour
+public class TutorialManager : MonoBehaviour, ISceneCanvas, ISceneUI
 {
     // Declaración de títulos y textos
-    public Button tutorialButton;
-    public GameObject tit1Tutorial;
-    public GameObject tit2Tutorial;
-    public GameObject tit3Tutorial;
-    public GameObject tit4Tutorial;
-    public GameObject tit5Tutorial;
-    public GameObject text1Tutorial;
-    public GameObject text2Tutorial;
-    public GameObject text3Tutorial;
-    public GameObject text4Tutorial;
-    public GameObject text5Tutorial;
-    public GameObject UI1Tutorial;
-    public GameObject UI2Tutorial;
-    public GameObject UI3Tutorial;
-    public GameObject UI4Tutorial;
-    public GameObject UI5Tutorial;
+    [SerializeField] private List<GameObject> _listTitles;
+    [SerializeField] private List<GameObject> _listTexts;
+    private List<GameObject> _listUIs;
 
     //Estado
     private int _state;
@@ -30,71 +16,50 @@ public class TutorialManager : MonoBehaviour
     {
         _state = 0;
 
-        //Inicializar el estado inicial
-        tit1Tutorial.SetActive(true);
-        text1Tutorial.SetActive(true);
-        tit2Tutorial.SetActive(false);
-        text2Tutorial.SetActive(false);
-        tit3Tutorial.SetActive(false);
-        text3Tutorial.SetActive(false);
-        tit4Tutorial.SetActive(false);
-        text4Tutorial.SetActive(false);
-        tit5Tutorial.SetActive(false);
-        text5Tutorial.SetActive(false);
+        SceneManager.activeSceneChanged += OnSceneChanged;
 
-        UI1Tutorial.SetActive(true);
-        UI2Tutorial.SetActive(false);
-        UI3Tutorial.SetActive(false);
-        UI4Tutorial.SetActive(false);
-        UI5Tutorial.SetActive(false);
+        //Inicializar el estado inicial
 
         //// Vincular el botón al método OnButtonPressed
         //tutorialButton.onClick.AddListener(OnButtonPressed);
     }
 
+    private void OnSceneChanged(UnityEngine.SceneManagement.Scene arg0, UnityEngine.SceneManagement.Scene arg1)
+    {
+        if (arg1 == SceneManager.GetSceneByBuildIndex((int)Scene.Tutorial))
+        {
+            _listUIs ??= CardsCollection.Singleton.ListCards;
+
+            _listTitles[_state].SetActive(true);
+            _listTexts[_state].SetActive(true);
+            _listUIs[_state].SetActive(true);
+        }
+    }
+
     public void OnButtonPressed()
     {
         _state++;
-        if (_state == 1)
+
+        _listTitles[_state - 1].SetActive(false);
+        _listTexts[_state - 1].SetActive(false);
+        _listUIs[_state - 1].SetActive(false);
+        if (_state == _listTitles.Count)
         {
-            tit1Tutorial.SetActive(false);
-            text1Tutorial.SetActive(false);
-            UI1Tutorial.SetActive(false);
-            tit2Tutorial.SetActive(true);
-            text2Tutorial.SetActive(true);
-            UI2Tutorial.SetActive(true);
+            CanvasScene.Singleton.ChangeScene(Scene.MainMenu);
+            return;
         }
-        else if (_state == 2)
-        {
-            tit2Tutorial.SetActive(false);
-            text2Tutorial.SetActive(false);
-            UI2Tutorial.SetActive(false);
-            tit3Tutorial.SetActive(true);
-            text3Tutorial.SetActive(true);
-            UI3Tutorial.SetActive(true);
-        }
-        else if (_state == 3)
-        {
-            tit3Tutorial.SetActive(false);
-            text3Tutorial.SetActive(false);
-            UI3Tutorial.SetActive(false);
-            tit4Tutorial.SetActive(true);
-            text4Tutorial.SetActive(true);
-            UI4Tutorial.SetActive(true);
-        }
-        else if (_state == 4)
-        {
-            tit4Tutorial.SetActive(false);
-            text4Tutorial.SetActive(false);
-            UI4Tutorial.SetActive(false);
-            tit5Tutorial.SetActive(true);
-            text5Tutorial.SetActive(true);
-            UI5Tutorial.SetActive(true);
-        }
-        else if (_state == 5)
-        {
-            // Cargar la escena del menú principal
-            SceneManager.LoadScene("MainMenuScene");
-        }
+        _listTitles[_state].SetActive(true);
+        _listTexts[_state].SetActive(true);
+        _listUIs[_state].SetActive(true);
+    }
+
+    public void RestartConsoles()
+    {
+        Awake();
+    }
+
+    public void SetActive(bool active)
+    {
+        gameObject.SetActive(active);
     }
 }

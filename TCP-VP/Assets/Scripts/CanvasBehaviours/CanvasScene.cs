@@ -37,7 +37,7 @@ public class CanvasScene : MonoBehaviour
     [SerializeField] private Vector3 _diclaimerScale;
     [SerializeField] private Vector3 _mainMenuScale;
     [SerializeField] private Vector3 _gameScale;
-    [SerializeField] private Vector3 _configScale;
+    [SerializeField] private Vector3 _tutorialScale;
 
     private Vector3 _recTransformPos;
     private RectTransform _rectTransform;
@@ -93,7 +93,7 @@ public class CanvasScene : MonoBehaviour
         }
         else if (_actualScene == Scene.MainMenu)
         {
-            Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            Canvas.renderMode = RenderMode.ScreenSpaceCamera;
             Canvas.sortingLayerID = 0;
             _rectTransform.position = _recTransformPos;
         }
@@ -111,12 +111,14 @@ public class CanvasScene : MonoBehaviour
                 Canvas.transform.localScale = _mainMenuScale;
                 break;
             case Scene.Game:
-            case Scene.Tutorial:
                 Canvas.transform.localScale = _gameScale;
                 break;
-            case Scene.Config:
-                Canvas.transform.localScale = _configScale;
+            case Scene.Tutorial:
+                Canvas.transform.localScale = _tutorialScale;
                 break;
+            //case Scene.Config:
+            //    Canvas.transform.localScale = _configScale;
+            //    break;
         }
         if (scene != Scene.Config)
             SceneManager.LoadScene((int)scene);

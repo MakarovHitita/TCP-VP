@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -10,11 +11,18 @@ public class LanguageInObjectSelector : MonoBehaviour
 
     private void Start()
     {
-        Name = _objectReference.name;
-        Text = GetComponent<TMP_Text>();
-        Text.color = _white ? Color.white : Color.black;
-        ConfigBehaviour.Singleton.AddOnNotifyLanguageChnagesEvent(ChangeLanguageText);
-        Text.text = LanguageManager.Singleton.LanguageTexts[ConfigBehaviour.Singleton.Options.Language][Name];
+        try
+        {
+            Name = _objectReference.name;
+            Text = GetComponent<TMP_Text>();
+            Text.color = _white ? Color.white : Color.black;
+            ConfigBehaviour.Singleton.AddOnNotifyLanguageChnagesEvent(ChangeLanguageText);
+            Text.text = LanguageManager.Singleton.LanguageTexts[ConfigBehaviour.Singleton.Options.Language][Name];
+        }
+        catch (Exception ex)
+        {
+            Debug.Log(gameObject.name);
+        }
     }
 
     // Update is called once per frame
