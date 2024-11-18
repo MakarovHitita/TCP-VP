@@ -23,7 +23,7 @@ public enum MainMenuActionButtons
     Exit,
 }
 
-public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
+public class MainMenuCanvas : MonoBehaviour, ISceneCanvas, ISceneUI
 {
     [SerializeField] private CameraMainMenu _camera;
     [SerializeField] private float _timeForCharConsole;
@@ -298,5 +298,10 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas
             yield return new WaitForSecondsRealtime(time);
         }
         LoadJoinLobby();
+    }
+
+    public void SetActive(bool active)
+    {
+        gameObject.SetActive(active);
     }
 }

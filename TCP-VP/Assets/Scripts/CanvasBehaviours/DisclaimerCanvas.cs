@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DisclaimerCanvas : MonoBehaviour
+public class DisclaimerCanvas : MonoBehaviour, ISceneCanvas, ISceneUI
 {
     [SerializeField] private TMP_Text _languageSelectionConsole;
     [SerializeField] private TMP_Text _languageSelectionDisclaimer;
@@ -130,5 +130,16 @@ public class DisclaimerCanvas : MonoBehaviour
         }
         yield return new WaitForSecondsRealtime(_disclaimerTimePerChar * 100000);
         CanvasScene.Singleton.ChangeScene(Scene.MainMenu);
+    }
+
+    public void RestartConsoles()
+    {
+        _languageSelectionConsole.text = "";
+        Start();
+    }
+
+    public void SetActive(bool active)
+    {
+        gameObject.SetActive(active);
     }
 }

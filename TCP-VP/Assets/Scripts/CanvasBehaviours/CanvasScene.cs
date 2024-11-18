@@ -98,8 +98,8 @@ public class CanvasScene : MonoBehaviour
             _rectTransform.position = _recTransformPos;
         }
 
-        SceneUIDic[_actualScene].SetActive(false);
-        SceneUIDic[scene].SetActive(true);
+        SceneUIDic[_actualScene].GetComponent<ISceneUI>().SetActive(false);
+        SceneUIDic[scene].GetComponent<ISceneUI>().SetActive(true);
         if (scene != Scene.Config)
             SceneUIDic[scene].GetComponent<ISceneCanvas>().RestartConsoles();
         switch (scene)

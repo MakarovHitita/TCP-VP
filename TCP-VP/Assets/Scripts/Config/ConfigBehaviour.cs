@@ -32,10 +32,13 @@ public class ConfigOptions
     }
 }
 
-public class ConfigBehaviour : MonoBehaviour
+public class ConfigBehaviour : MonoBehaviour, ISceneCanvas, ISceneUI
 {
     public static ConfigBehaviour Singleton { get; private set; }
 
+    [SerializeField] private TMP_Text _configConsole;
+    [SerializeField] private GameObject _configUI;
+    
     [SerializeField] private TMP_Dropdown _languageSelectionDD;
    
     [SerializeField] private TMP_Dropdown _daltonismDD;
@@ -163,5 +166,15 @@ public class ConfigBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         Singleton = null;
+    }
+
+    public void RestartConsoles()
+    {
+        _configConsole.text = "";
+    }
+
+    public void SetActive(bool active)
+    {
+        _configUI.SetActive(active);
     }
 }
