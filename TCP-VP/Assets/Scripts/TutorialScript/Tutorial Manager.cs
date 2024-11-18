@@ -48,8 +48,8 @@ public class TutorialManager : MonoBehaviour
         UI4Tutorial.SetActive(false);
         UI5Tutorial.SetActive(false);
 
-        // Vincular el botón al método OnButtonPressed
-        tutorialButton.onClick.AddListener(OnButtonPressed);
+        //// Vincular el botón al método OnButtonPressed
+        //tutorialButton.onClick.AddListener(OnButtonPressed);
     }
 
     public void OnButtonPressed()
