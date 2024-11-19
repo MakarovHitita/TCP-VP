@@ -11,7 +11,7 @@ public class SpriteInObjectSelector : MonoBehaviour
     {
         Name = _objectReference.name;
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        ConfigBehaviour.Singleton.AddOnNotifyDaltonismChangesEvent(ChangeDaltonismSprite);
+        ConfigBehaviour.AddOnNotifyDaltonismChangesEvent(ChangeDaltonismSprite);
     }
 
     // Update is called once per frame
@@ -27,6 +27,6 @@ public class SpriteInObjectSelector : MonoBehaviour
 
     private void OnDestroy()
     {
-        ConfigBehaviour.Singleton.RemoveOnNotifyDaltonismChangesEvent(ChangeDaltonismSprite);
+        ConfigBehaviour.RemoveOnNotifyDaltonismChangesEvent(ChangeDaltonismSprite);
     }
 }

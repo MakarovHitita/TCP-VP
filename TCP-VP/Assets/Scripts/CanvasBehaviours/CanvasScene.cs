@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public enum Scene
 {
-    Disclaimer = 0,
+    Disclaimer = 1,
     MainMenu,
     Game,
     Tutorial,
@@ -34,13 +34,12 @@ public class CanvasScene : MonoBehaviour
 
     private Canvas Canvas { get; set; }
 
-    [SerializeField] private Vector3 _diclaimerScale;
     [SerializeField] private Vector3 _mainMenuScale;
-    [SerializeField] private Vector3 _gameScale;
-    [SerializeField] private Vector3 _tutorialScale;
 
     private Vector3 _recTransformPos;
     private RectTransform _rectTransform;
+
+    private Camera _camera;
 
     private void Awake()
     {
@@ -49,9 +48,10 @@ public class CanvasScene : MonoBehaviour
             _rectTransform = GetComponent<RectTransform>();
             _recTransformPos = _rectTransform.position;
             Singleton = this;
+            _camera = FindFirstObjectByType<Camera>();
 
             Canvas = GetComponent<Canvas>();
-            _actualScene = 0;
+            _actualScene = (Scene)1;
             SceneUIDic = new();
             var list = Enum.GetNames(typeof(Scene)).ToList();
             for (int i = 0; i < _uiSceneParts.Count; i++)
@@ -90,36 +90,37 @@ public class CanvasScene : MonoBehaviour
             Canvas.renderMode = RenderMode.WorldSpace;
             Canvas.sortingLayerID = 1;
             _rectTransform.position = Vector3.zero;
+            Canvas.transform.localScale = _mainMenuScale;
         }
         else if (_actualScene == Scene.MainMenu)
         {
             Canvas.renderMode = RenderMode.ScreenSpaceCamera;
             Canvas.sortingLayerID = 0;
-            _rectTransform.position = _recTransformPos;
+            //_rectTransform.position = _recTransformPos;
         }
 
-        SceneUIDic[_actualScene].GetComponent<ISceneUI>().SetActive(false);
+        if (scene == Scene.Config)
+        {
+            Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        }
+
+        if (scene == Scene.Game)
+        {
+            _camera.gameObject.SetActive(false);
+        }
+
+        if (_actualScene == Scene.Game)
+        {
+            _camera.gameObject.SetActive(true);
+        }
+
+        if (_actualScene != 0)
+            SceneUIDic[_actualScene].GetComponent<ISceneUI>().SetActive(false);
+
         SceneUIDic[scene].GetComponent<ISceneUI>().SetActive(true);
         if (scene != Scene.Config)
             SceneUIDic[scene].GetComponent<ISceneCanvas>().RestartConsoles();
-        switch (scene)
-        {
-            case Scene.Disclaimer:
-                Canvas.transform.localScale = _diclaimerScale;
-                break;
-            case Scene.MainMenu:
-                Canvas.transform.localScale = _mainMenuScale;
-                break;
-            case Scene.Game:
-                Canvas.transform.localScale = _gameScale;
-                break;
-            case Scene.Tutorial:
-                Canvas.transform.localScale = _tutorialScale;
-                break;
-            //case Scene.Config:
-            //    Canvas.transform.localScale = _configScale;
-            //    break;
-        }
+
         if (scene != Scene.Config)
             SceneManager.LoadScene((int)scene);
         _actualScene = scene;

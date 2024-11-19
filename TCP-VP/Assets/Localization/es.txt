@@ -57,3 +57,48 @@ titulo4Tutorial:	Cartas de ataque
 texto4Tutorial:	Las cartas de ataque se usan directamente sobre los jugadores rivales, afectando a sus componentes o a su tiempo de juego.
 titulo5Tutorial:	Cartas de defensa
 texto5Tutorial:	Las cartas de defensa sirven para protegerse de los ataques. Deben usarse justo despuÃ©s de ser atacado.
+discardBUT:	Descartar
+throwBUT:	Tirar
+PlayerTurn:	Turno de Jugador 2
+victoryButton:	Victoria
+victoryText:	Clic aqui para pantalla de victoria
+defeatButton:	Derrota
+defeatText:	Clic aqui para pantalla de derrota
+vicScreenText:	Has ganado!
+vicScreenButton:	Continuar
+defScreenText:	Has perdido!
+defScreenButton:	Continuar
+MasterSound:	Volumen General
+MusicSound:	Musica
+EffectsSound:	Efectos
+ChatSound:	Chat de Voz
+WindowMode:	Modo de Ventana
+WindowResolution:	Resolucion
+WRWidthIF:	Ancho
+WRHeightIF:	Alto
+SoundAndWindowButton:	Sonido Y Pantalla
+ConfigGameButton:	Juego
+AccesibilityButton:	Accesibilidad
+GoBackButton:	Atras
+DiscardChangesButton:	Desechar Cambios
+ApplyChangesButton:	Aplicar Cambios
+WindowModeDD_0:	Pantalla Completa
+WindowModeDD_1:	En Ventana
+Graphics:	Graficos
+Effects:	Efectos
+Language:	Idioma
+GraphicDD_0:	Muy Bajos
+GraphicDD_1:	Bajos
+GraphicDD_2:	Medios
+GraphicDD_3:	Altos
+GraphicDD_4:	Muy Altos
+GraphicDD_5:	Extremo
+Daltonism:	Modo Daltonico
+DaltonismDD_0:	No
+DaltonismDD_1:	Protanipia
+DaltonismDD_2:	Deuteranopia
+DaltonismDD_3:	Tritanopia
+TextSize:	Text Size
+TextSizeDD_0:	Small
+TextSizeDD_1:	Medium
+TextSizeDD_2:	Large

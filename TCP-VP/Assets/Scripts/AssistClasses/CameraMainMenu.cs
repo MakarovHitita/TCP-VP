@@ -10,6 +10,24 @@ public class CameraMainMenu : MonoBehaviour
     [SerializeField] private Vector3 _targetPosition;
     [SerializeField] private Vector3 _targetRotation;
 
+    private AudioListener AudioListener { get; set; }
+
+    private float MasterSound { get; set; }
+    private float MusicSound { get; set; }
+    private float EffectsSound { get; set; }
+    private float ChatSound { get; set; }
+
+    private void Awake()
+    {
+        MasterSound = ConfigBehaviour.Singleton.Options.MasterSound;
+        MusicSound = ConfigBehaviour.Singleton.Options.MusicSound;
+        EffectsSound = ConfigBehaviour.Singleton.Options.EffectsSound;
+        ChatSound = ConfigBehaviour.Singleton.Options.ChatSound;
+
+        AudioListener = GetComponent<AudioListener>();
+        //ConfigBehaviour.AddOnNotifyMasterSoundChangesEvent()
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +38,11 @@ public class CameraMainMenu : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void ChangeMasterSound()
+    {
+
     }
 
     public bool DoAnimation(int steps)

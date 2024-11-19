@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
-  _timeForCharConsole: 0.0001
+  _timeForCharConsole: 0.00001
   _initConsole: {fileID: 4900000, guid: baffb771ae26989439a2d2adb39b1d90, type: 3}
   _mainMenuConsoleCommands: {fileID: 4900000, guid: 33dab8f951e74c047acaac0a27b27d9c, type: 3}
   _mainMenuConsole: {fileID: 3636773657543696469}
@@ -377,6 +377,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 5223446472788358325}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &990824710341522947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1124,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 1283548381828304951}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &1927808142214677651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,6 +1634,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 3791441482662231140}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &3014667536054032130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,6 +2549,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 3014667536054032130}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &4701622404898623891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,6 +3168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 2077998802915002160}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &5861255877889696690
 GameObject:
   m_ObjectHideFlags: 0
@@ -3588,6 +3603,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 6482431648108764916}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &6163790692276261077
 GameObject:
   m_ObjectHideFlags: 0
@@ -3778,6 +3796,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 4701622404898623891}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &6482431648108764916
 GameObject:
   m_ObjectHideFlags: 0
@@ -4287,6 +4308,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 7384669979987302352}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &7375132775733375238
 GameObject:
   m_ObjectHideFlags: 0
@@ -4771,6 +4795,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 581798123043655117}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &7763487742234393977
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,6 +4949,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 4281791700880438011}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &8335839669379711606
 GameObject:
   m_ObjectHideFlags: 0
@@ -5073,6 +5103,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 5968417682831615780}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &8567135405407149735
 GameObject:
   m_ObjectHideFlags: 0
@@ -5261,6 +5294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 7375132775733375238}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 3206983388891985193}
 --- !u!114 &7611629314769017785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5507,6 +5543,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 5538147222995728440}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &9152266898974024899
 GameObject:
   m_ObjectHideFlags: 0
@@ -5658,3 +5697,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 1120147627163829046}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}

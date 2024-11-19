@@ -257,7 +257,7 @@ public class MainMenuCanvas : MonoBehaviour, ISceneCanvas, ISceneUI
         {
             time = _timeForCharConsole;
             _mainMenuConsole.text += text[i];
-            //_mainMenuConsoleManager.verticalNormalizedPosition = 0;
+            _mainMenuConsoleManager.verticalNormalizedPosition = 0;
             if (text[i] == Environment.NewLine[0])
                 time *= 100;
             yield return new WaitForSecondsRealtime(time);

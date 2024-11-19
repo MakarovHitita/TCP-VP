@@ -63,8 +63,7 @@ public class DisclaimerCanvas : MonoBehaviour, ISceneCanvas, ISceneUI
         _languageSelection.SetActive(false);
         if (hasLanguageShown)
         {
-            ConfigBehaviour.Singleton.OnDisclaimerLanguageValueChanged();
-            ConfigBehaviour.Singleton.UpdateOptions();
+            ConfigBehaviour.Singleton.OnDisclaimerLanguageValueChanged(_languageSelectionDD.options[_languageSelectionDD.value].text.ToLower()[..2]);
         }
         StartCoroutine(ShowDisclaimer(hasLanguageShown));
     }

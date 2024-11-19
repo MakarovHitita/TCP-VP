@@ -1,2 +1,104 @@
 English
 LanguageSelectionButton:	Submit
+TitleButton:	Start
+RestartButton:	Go Back
+CreditsButton:	Credits
+GameButton:	Play
+ExitButton:	Exit
+SingleButton:	Single Match
+MultiButton:	Online
+Tutorial:	Tutorial
+FastMatchButton:	Matchmake
+CreateLobbyButton:	Create Lobby
+JoinLobbyButton:	Join Lobby
+InputCodeIF:	Code ...
+SubmitCodeButton:	Join
+ConfigButton:	Settings
+NombreAvast:	AVAST
+DescripcionAvast:	Eliminate RAM viruses. Antivirus card.
+NombreCPU:	CPU
+DescripcionCPU:	Central Processing Unit. Component Card.
+NombreError:	ERROR
+DescripcionError:	Send an error to the next player. He doesn't play his turn. Attack card.
+NombreEscudo:	SHIELD
+DescripcionEscudo:	Saves you from an error on your computer. Block the attack. Defense card.
+NombreGPU:	GPU
+DescripcionGPU:	Graphic Card. Component Card.
+NombreKaspersky:	KASPERSKY
+DescripcionKaspersky:	Eliminate SSD viruses. Antivirus card.
+NombreLinux:	LINUX
+DescripcionLinux:	Install Linux on the opponent. He won't see his own hand. Attack card.
+NombreMcAfee:	MCAFEE
+DescripcionMcAfee:	Eliminate GPU viruses. Antivirus card.
+NombreMinero:	MINER
+DescripcionMinero:	Mine criptos. GPU affected. Virus card.
+NombrePanda:	PANDA
+DescripcionPanda:	Eliminate CPU viruses. Antivirus card.
+NombreRAM:	RAM
+DescripcionRAM:	Random Access Memory. Component card.
+NombreRansomware:	RANSOMWARE
+DescripcionRansomware:	Cipher PC files. SSD affected. Virus card.
+NombreSpyware:	SPYWARE
+DescripcionSpyware:	Spy affected device. CPU affected. Virus card.
+NombreSSD:	SSD
+DescripcionSSD:	Solid State Disk. Component card.
+NombreTroyano:	TROYAN
+DescripcionTroyano:	Executes programs on background. RAM affected. Virus card.
+NombreWindows:	WINDOWS
+DescripcionWindows:	Install Windows while someone install you Linux. Block the attack. Defense card.
+tutorialBUT:	Next
+titulo1Tutorial:	Component cards
+texto1Tutorial:	The components are the objects that you must protect and infect other players to win the game.
+titulo2Tutorial:	Antivirus cards
+texto2Tutorial:	Antivirus can disinfect your components if they have viruses. If they do not have viruses, they are used as a shield.
+titulo3Tutorial:	Virus cards
+texto3Tutorial:	Viruses can infect your components. If a component has an antivirus, it removes it and leaves it vulnerable.
+titulo4Tutorial:	Attack cards
+texto4Tutorial:	Attack cards are used directly on opponents, affecting their components or their turns.
+titulo5Tutorial:	Defense cards
+texto5Tutorial:	Defense cards are used to protect against attacks. They should be used right after being attacked.
+discardBUT:	Discard
+throwBUT:	Throw
+PlayerTurn:	Player 2's turn
+victoryButton:	Victory
+victoryText:	Click here to continue to victory screen
+defeatButton:	Derrota
+defeatText:	Click here to continue to defeat screen
+vicScreenText:	You won!
+vicScreenButton:	Continue
+defScreenText:	You lost!
+defScreenButton:	Continue
+MasterSound:	Master Sound
+MusicSound:	Music
+EffectsSound:	Effects
+ChatSound:	Voice Chat
+WindowMode:	Window Mode
+WindowResolution:	Resolution
+WRWidthIF:	Width
+WRHeightIF:	Height
+SoundAndWindowButton:	Sound & Window
+ConfigGameButton:	Game
+AccesibilityButton:	Accesibility
+GoBackButton:	Go Back
+DiscardChangesButton:	Discard Changes
+ApplyChangesButton:	Apply Changes
+WindowModeDD_0:	Full Screen
+WindowModeDD_1:	Windowed
+Graphics:	Graphics
+Effects:	Effects
+Language:	Language
+GraphicDD_0:	Very Low
+GraphicDD_1:	Low
+GraphicDD_2:	Medium
+GraphicDD_3:	High
+GraphicDD_4:	Very High
+GraphicDD_5:	Extreme
+Daltonism:	Daltonism Mode
+DaltonismDD_0:	No
+DaltonismDD_1:	Protanipia
+DaltonismDD_2:	Deuteranopia
+DaltonismDD_3:	Tritanopia
+TextSize:	Tamaño del Texto
+TextSizeDD_0:	Pequeño
+TextSizeDD_1:	Mediano
+TextSizeDD_2:	Grande
