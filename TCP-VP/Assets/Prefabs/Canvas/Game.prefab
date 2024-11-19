@@ -151,6 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 3609228977994751986}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &1070429660413935406
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +305,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 7594720797246653882}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &1570635072791837105
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 6612922290304987171}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &2673646274213081118
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +686,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 6783385046533819424}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &3094741393839976031
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +840,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 4867663864441692497}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &3609228977994751986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1369,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 3731152782026913590}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &4220009251945887859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,6 +1523,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 6061522817147277973}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &4331126589229534007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,7 +1646,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4259826817894266042}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2457054353626761160}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnButtonScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4676155239365154344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,6 +1810,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 4331126589229534007}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &4867663864441692497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,6 +2138,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 3814646455075697891}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &5781039598876023265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2292,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 2365115107493157486}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1 &5795477700148184396
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,6 +3072,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectReference: {fileID: 6643911465780538052}
   _white: 1
+  _semiTransparent: 0
+  _tranparencyPer100: 0
+  _text: {fileID: 0}
 --- !u!1001 &3538255109721200798
 PrefabInstance:
   m_ObjectHideFlags: 0
